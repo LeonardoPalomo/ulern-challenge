@@ -14,3 +14,11 @@ Tener Composer y npm instalados.
    - $<i>php artisan migrate</i> (responder "yes" a la pregunta)<br />
 4. Por último, ejecutar en terminal $<i>php -S localhost:8000 -t public/</i><br />
 5. Ingresar al navegador a la url "localhost:8000"<br />
+
+<h2>Observaciones:</h2>
+
+- En caso de que <i>php artisan migrate</i> presente errores, editar el archivo php.ini de la siguiente manera:
+";extension=pdo_sqlite" debe ser "extension=pdo_sqlite". (https://stackoverflow.com/questions/38949781/pdo-exception-driver-not-found-in-laravel-for-sqlite/55144013#55144013)
+
+- correr la aplicación utilizando <i>php artisan serve</i> puede presentar errores, en caso de ser así editar el archivo php.ini de la siguiente manera:
+  "<b>variables_order = "EGPCS"</b>" debe ser "<b>variables_order = "GPCS"</b>"
